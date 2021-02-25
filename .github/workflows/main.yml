@@ -53,3 +53,9 @@ jobs:
           echo "        </ul>" >> $OUTPUT
           echo "    </body>" >> $OUTPUT
           echo "</html>" >> $OUTPUT
+      
+      # Auto commit
+      - name: Simple commit
+        # You may pin to the exact commit or the version.
+        # uses: zwaldowski/git-commit-action@66730766679672410dc04830ae6389f4376c8c94
+        uses: zwaldowski/git-commit-action@v1
