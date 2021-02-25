@@ -42,16 +42,16 @@ jobs:
 
           echo "        <ul>" >> $OUTPUT
           for i in `find "$ROOT" -type f -name '*.html' -exec sh -c '
-            for file do
-              echo "${file// /%20}"
-            done
-            ' exec-sh {} +`; do
+              for file do
+                  echo "${file// /%20}"
+              done
+              ' exec-sh {} +`; do
 
-            path_ext_space="${i//%20/ }"
+              path_ext_space="${i//%20/ }"
 
-            base=`basename "$i"`
-            base_noext="${base%.*}"
-            base_noext_space="${base_noext//%20/ }"
+              base=`basename "$i"`
+              base_noext="${base%.*}"
+              base_noext_space="${base_noext//%20/ }"
 
               echo "           <li>" >> $OUTPUT
               echo "               <a href=\"./$path_ext_space\">${base_noext_space}</a></li>" >> $OUTPUT
