@@ -23,7 +23,7 @@ for i in `find "$ROOT" -type f -name '*.html' -exec sh -c '
 
 	base=`basename "$i"`
 	base_noext="${base%.*}"
-	base_noext_space="${noext//%20/ }"
+	base_noext_space="${base_noext//%20/ }"
 
     echo "           <li>" >> $OUTPUT
     echo "               <a href=\"./$path_ext_space\">${base_noext_space}</a></li>" >> $OUTPUT
