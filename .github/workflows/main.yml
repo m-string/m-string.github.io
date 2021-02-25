@@ -36,8 +36,8 @@ jobs:
           echo "<html>" >> $OUTPUT
           echo "    <meta name='viewport' content='initial-scale=1, viewport-fit=cover'>" >> $OUTPUT
           echo "    <head>" >> $OUTPUT
-          echo "        <title></title>" >> $OUTPUT
-          echo "    <head>" >> $OUTPUT
+          echo "        <title>姜棚组智</title>" >> $OUTPUT
+          echo "    </head>" >> $OUTPUT
           echo "    <body>" >> $OUTPUT
 
           echo "        <ul>" >> $OUTPUT
@@ -46,9 +46,16 @@ jobs:
               echo "${file// /%20}"
             done
             ' exec-sh {} +`; do
-            file=`basename "$i"`
-            origin="${file%.*}"
-              echo "           <li><a href=\"$i\">${origin//%20/ }</a></li>" >> $OUTPUT
+
+            path_ext_space="${i//%20/ }"
+
+            base=`basename "$i"`
+            base_noext="${base%.*}"
+            base_noext_space="${base_noext//%20/ }"
+
+              echo "           <li>" >> $OUTPUT
+              echo "               <a href=\"./$path_ext_space\">${base_noext_space}</a></li>" >> $OUTPUT
+              echo "           </li>" >> $OUTPUT
           done
           echo "        </ul>" >> $OUTPUT
           echo "    </body>" >> $OUTPUT
