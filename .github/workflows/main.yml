@@ -55,7 +55,7 @@ jobs:
           echo "</html>" >> $OUTPUT
       
       # Auto commit
-      - name: Simple commit
+      - name: Add & Commit
         # You may pin to the exact commit or the version.
-        # uses: zwaldowski/git-commit-action@66730766679672410dc04830ae6389f4376c8c94
-        uses: zwaldowski/git-commit-action@v1
+        # uses: EndBug/add-and-commit@b3c7c1e078a023d75fb0bd326e02962575ce0519
+        uses: EndBug/add-and-commit@v7.0.0
