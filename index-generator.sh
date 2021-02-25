@@ -13,11 +13,11 @@ echo "    </head>" >> $OUTPUT
 echo "    <body>" >> $OUTPUT
 
 echo "        <ul>" >> $OUTPUT
-for i in `find "$ROOT" -type f -name '*.html' -exec sh -c ' 
+for i in `find "$ROOT" -type f -name '*.html' -exec bash -c ' 
 	for file do
 		echo "${file// /%20}"
 	done
-	' exec-sh {} +`; do
+	' exec-bash {} +`; do
 
 	path_ext_space="${i//%20/ }"
 
